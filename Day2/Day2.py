@@ -12,16 +12,15 @@ for row in list:
 def part1():
     tot = 0
     for p in passwords:
-        if p['string'].count(p['letter']) >= p['min'] and p['string'].count(p['letter']) <= p['max']:
+        if p['max'] >= p['string'].count(p['letter']) >= p['min']:
             tot += 1
     return tot
-# print(part1())
+print(part1())
 
 def part2():
     tot = 0
-    for p in passwords[0:5]:
+    for p in passwords:
         if (p['string'][p['min']-1] == p['letter']) ^ (p['string'][p['max']-1] == p['letter']):
-            print(p)
             tot += 1
     return tot
 print(part2())
